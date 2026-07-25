@@ -31,8 +31,8 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <video 
-            src="/mantle-logo-animated.mp4" 
+          <img 
+            src="/mantle-animated2.gif" 
             autoPlay 
             loop 
             muted 
