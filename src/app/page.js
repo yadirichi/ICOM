@@ -236,31 +236,30 @@ export default function Home() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                /* Added margin: "-50px" so it loads right before you see it */
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                /* Added transform-gpu and will-change-transform for smooth rendering */
-                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all transform-gpu will-change-transform"
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                /* REMOVED transition-all to stop the conflict. Added backface-visibility-hidden */
+                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transform-gpu backface-visibility-hidden"
               >
-                <div className="aspect-square bg-zinc-800 relative">
-                        <div className="aspect-square bg-zinc-800 relative overflow-hidden">
-                          <Image 
-                            src={minister.image}
-                            alt={minister.name}
-                            fill
-                            priority={true}
-                            loading="eager"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                            className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                          />
-                        </div>              
+                {/* REMOVED bg-zinc-800 so there is no black box to flash */}
+                <div className="aspect-square relative overflow-hidden bg-transparent z-10">
+                   <Image 
+                     src={minister.image}
+                     alt={minister.name}
+                     fill
+                     priority={true}
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                     /* Scoped the transition specifically to transform, not 'all' */
+                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out transform-gpu backface-visibility-hidden"
+                   />
                 </div>
-                <div className="p-5 sm:p-6">
+                <div className="p-5 sm:p-6 relative z-20 bg-zinc-900">
                   <h4 className="text-lg sm:text-xl font-bold text-white mb-2">{minister.name}</h4>
                   <p className="text-xs sm:text-sm text-[#D4AF37] leading-relaxed">{minister.church}</p>
                 </div>
               </motion.div>
+            
             ))}
           </div>
 
@@ -271,33 +270,29 @@ export default function Home() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                /* Added margin: "-50px" */
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                /* Added transform-gpu and will-change-transform */
-                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all transform-gpu will-change-transform"
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                /* REMOVED transition-all to stop the conflict */
+                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transform-gpu backface-visibility-hidden"
               >
-
-                <div className="aspect-[4/5] bg-zinc-800 relative">
-                  <div className="aspect-[4/5] bg-zinc-800 relative overflow-hidden">
-                        <Image 
-                          src={artist.image}
-                          alt={artist.name}
-                          fill
-                          priority={true}
-                          loading="eager"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                          className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                        />
-                  </div> 
+                {/* REMOVED bg-zinc-800 */}
+                <div className="aspect-[4/5] relative overflow-hidden bg-transparent z-10">
+                  <Image 
+                     src={artist.image}
+                     alt={artist.name}
+                     fill
+                     priority={true}
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out transform-gpu backface-visibility-hidden"
+                   />
                 </div>
-                <div className="p-5 sm:p-6 text-center">
+                <div className="p-5 sm:p-6 text-center relative z-20 bg-zinc-900">
                   <p className="text-[10px] sm:text-xs uppercase text-[#D4AF37] tracking-widest mb-1">{artist.title}</p>
                   <h4 className="text-xl sm:text-2xl font-bold text-white">{artist.name}</h4>
                 </div>
               </motion.div>
-
+            
               
             ))}
           </div>
