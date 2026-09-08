@@ -181,8 +181,8 @@ export default function Home() {
               
               {/* Canva-style Scribble / Brush Edge (Visible only on mobile/tablet) */}
               {/* Changed text-color to white so it blends the image into the section's white background */}
-              <div className="absolute bottom-0 left-0 w-full h-8 sm:h-12 lg:hidden text-white translate-y-[2px]">
-                <svg 
+              {   /* Added transform-gpu and z-20 to stop the sub-pixel blinking */}
+              <div className="absolute bottom-0 left-0 w-full h-8 sm:h-12 lg:hidden text-white translate-y-[2px] z-20 transform-gpu backface-visibility-hidden">                <svg 
                   viewBox="0 0 1200 40" 
                   preserveAspectRatio="none" 
                   className="w-full h-full"
@@ -236,12 +236,13 @@ export default function Home() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
+                /* Added margin: "-50px" so it loads right before you see it */
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all"
+                /* Added transform-gpu and will-change-transform for smooth rendering */
+                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all transform-gpu will-change-transform"
               >
-                {/* Replace with actual minister picture */}
                 <div className="aspect-square bg-zinc-800 relative">
                         <div className="aspect-square bg-zinc-800 relative overflow-hidden">
                           <Image 
@@ -268,12 +269,14 @@ export default function Home() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
+                /* Added margin: "-50px" */
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all"
+                /* Added transform-gpu and will-change-transform */
+                className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg border border-zinc-800 group hover:border-[#BF953F] transition-all transform-gpu will-change-transform"
               >
-                {/* Replace with actual artist picture */}
+
                 <div className="aspect-[4/5] bg-zinc-800 relative">
                   <div className="aspect-[4/5] bg-zinc-800 relative overflow-hidden">
                         <Image 
