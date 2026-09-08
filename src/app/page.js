@@ -249,7 +249,9 @@ export default function Home() {
                             src={minister.image}
                             alt={minister.name}
                             fill
-                            sizes="90vw"
+                            priority={true}
+                            loading="eager"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                             className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out"
                           />
                         </div>              
@@ -283,7 +285,9 @@ export default function Home() {
                           src={artist.image}
                           alt={artist.name}
                           fill
-                          sizes="90vw"
+                          priority={true}
+                          loading="eager"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                           className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out"
                         />
                   </div> 
