@@ -38,10 +38,10 @@ const RegisterButton = () => (
 
 export default function Home() {
   const guestMinisters = [
-    { name: "Reverend Sam Oye", church: "Transforming Church", image: "/sam.jpg" },
-    { name: "Pastor Peter Amenkhinen", church: "Regional Overseer East Africa RCCG", image: "/peter.jpg" },
-    { name: "Pastor Bolaji Idowu", church: "Harvesters International Church", image: "/bolaji.jpg" },
-    { name: "Pastor Tunde Benjamin", church: "Throne Room, RCCG", image: "/tunde.jpg" },
+  { name: "Pastor Peter Amenkhinen", church: "Regional Overseer East Africa RCCG", image: "/peter.jpg" },
+  { name: "Pastor Bolaji Idowu", church: "Harvesters International Church", image: "/bolaji.jpg" },
+  { name: "Reverend Sam Oye", church: "Transforming Church", image: "/sam.jpg" },
+  { name: "Pastor Tunde Benjamin", church: "Throne Room, RCCG", image: "/tunde.jpg" },
   ];
 
   const musicArtists = [
