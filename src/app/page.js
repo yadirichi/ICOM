@@ -31,9 +31,9 @@ const rethinkSans = Rethink_Sans({
 
 // Reusable CTA Button Component
 const RegisterButton = () => (
-  <button className={`${rethinkSans.className} text-lg sm:text-xl md:text-2xl mt-8 bg-gradient-to-r from-[#BF953F] to-[#B38728] text-[#FAFAFA] font-bold py-4 px-8 sm:px-10 tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(191,149,63,0.4)] hover:shadow-[0_15px_40px_rgba(191,149,63,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto`}>
+  <a href="https://forms.gle/7SPPYSFuALspR1yM7" className={`${rethinkSans.className} text-lg sm:text-xl md:text-2xl mt-8 bg-gradient-to-r from-[#BF953F] to-[#B38728] text-[#FAFAFA] font-bold py-4 px-8 sm:px-10 tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(191,149,63,0.4)] hover:shadow-[0_15px_40px_rgba(191,149,63,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto`}>
     Register to Attend
-  </button>
+  </a>
 );
 
 export default function Home() {
