@@ -31,12 +31,16 @@ const rethinkSans = Rethink_Sans({
 
 // Reusable CTA Button Component
 const RegisterButton = () => (
-  <a href="https://forms.gle/7SPPYSFuALspR1yM7" className={`${rethinkSans.className} text-lg sm:text-xl md:text-2xl mt-8 bg-gradient-to-r from-[#BF953F] to-[#B38728] text-[#FAFAFA] font-bold py-4 px-8 sm:px-10 tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(191,149,63,0.4)] hover:shadow-[0_15px_40px_rgba(191,149,63,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto`}>
+  <a href="https://forms.gle/7SPPYSFuALspR1yM7" className={`${rethinkSans.className} text-lg sm:text-xl md:text-2xl text-center mt-8 bg-gradient-to-r from-[#BF953F] to-[#B38728] text-[#FAFAFA] font-bold py-4 px-8 sm:px-10 tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(191,149,63,0.4)] hover:shadow-[0_15px_40px_rgba(191,149,63,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto`}>
     Register to Attend
   </a>
 );
 
 export default function Home() {
+
+
+
+
   const guestMinisters = [
   { name: "Pastor Peter Amenkhinen", church: "Regional Overseer East Africa RCCG", image: "/peter.jpg" },
   { name: "Pastor Bolaji Idowu", church: "Harvesters International Church", image: "/bolaji.jpg" },
@@ -47,7 +51,7 @@ export default function Home() {
   const musicArtists = [
     { name: "Kaestrings", title: "Minister" , image: "/kae.jpg" },
     { name: "Chris Morgan", title: "Pastor" , image: "/chris.jpg" },
-    { name: "Emma Onyx", title: "Minister" , image: "/emma.jpg" },
+    { name: "Ema Onyx", title: "Minister" , image: "/emma.jpg" },
   ];
 
   const trendImages = [
@@ -306,7 +310,7 @@ export default function Home() {
               </div>  
 
 
-      {/* 6. 10TH ANNIVERSARY & DOCUMENTARY SECTION */}
+     {/* 6. 10TH ANNIVERSARY & DOCUMENTARY SECTION */}
       <section className="py-20 sm:py-24 px-4 bg-gradient-to-b from-[#000] via-[#BF953F] to-[#000]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 items-center">
           <motion.div
@@ -331,19 +335,18 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="w-full aspect-video bg-zinc-900 rounded-[2rem] border border-zinc-800 shadow-2xl relative overflow-hidden group cursor-pointer"
+            className="w-full aspect-video bg-zinc-900 rounded-[2rem] border border-zinc-800 shadow-2xl relative overflow-hidden"
           >
-            {/* Documentary Video Placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center flex-col">
-              <div className="w-16 sm:w-20 h-16 sm:h-20 bg-[#BF953F]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <div className="w-12 sm:w-16 h-12 sm:h-16 bg-[#BF953F] rounded-full flex items-center justify-center pl-1 sm:pl-2">
-                  <svg className="w-6 sm:w-8 h-6 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="mt-4 text-zinc-400 font-medium tracking-wide uppercase text-xs sm:text-sm">Watch Trailer</p>
-            </div>
+            {/* Direct YouTube Embed */}
+            <iframe 
+              className="absolute inset-0 w-full h-full"
+              /* Replace YOUR_VIDEO_ID_HERE with the actual YouTube ID */
+              src="https://www.youtube.com/embed/DNViIEWSCLQ?rel=0&modestbranding=1" 
+              title="10 Years of Mantles Documentary"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
           </motion.div>
         </div>
       </section>
