@@ -218,7 +218,7 @@ export default function Home() {
           </div>
           
           {/* Increased margin-top slightly to give breathing room after the image on mobile */}
-          <h3 className={`${playfair.className} font-serif italic font-semibold text-2xl lg:text-5xl md:text-4xl text-[#9b1313] px-2 leading-tight lg:mt-3`}>
+          <h3 className={`${playfair.className} font-serif italic font-semibold text-xl lg:text-5xl md:text-4xl text-[#9b1313] px-2 leading-tight lg:mt-3`}>
             Pst. & Pst. Mrs. Michael Ajogba
           </h3>
         </div>
