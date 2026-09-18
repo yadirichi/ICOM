@@ -72,7 +72,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="mt-4 sm:mt-10"
+          className="mt-4"
         >
           <img 
             src="/mantle-animated2.gif" 
