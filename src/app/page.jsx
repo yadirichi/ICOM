@@ -100,7 +100,7 @@ export default function Home() {
               International <br />
               Conference <br />
               Of Mantles <br />
-              <span className="text-2xl sm:text-4xl md:text-6xl tracking-[0.2em] opacity-90 inline-block mt-2 sm:mt-4">(ICOM)</span>
+              <span className="text-2xl sm:text-4xl md:text-6xl tracking-[0.2em] opacity-90 inline-block mt-2 sm:mt-4">(ICM)</span>
             </h1>
           </div>
         </motion.div>
