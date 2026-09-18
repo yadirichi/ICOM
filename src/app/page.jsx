@@ -43,7 +43,6 @@ export default function Home() {
 
   const guestMinisters = [
   { name: "Pastor Peter Amenkhinen", church: "Regional Overseer East Africa RCCG", image: "/peter.jpg" },
-  { name: "Pastor Bolaji Idowu", church: "Harvesters International Church", image: "/bolaji.jpg" },
   { name: "Reverend Sam Oye", church: "Transforming Church", image: "/sam.jpg" },
   { name: "Pastor Tunde Benjamin", church: "Throne Room, RCCG", image: "/tunde.jpg" },
   ];
@@ -235,7 +234,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className={`${bartle.className} text-3xl sm:text-5xl md:text-6xl text-center text-[#FCF6BA] mb-12 sm:mb-16`}>Guest Ministers</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-20 sm:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8 mb-20 sm:mb-24">
             {guestMinisters.map((minister, index) => (
               <motion.div
                 key={index}
